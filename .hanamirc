@@ -1,0 +1,3 @@
+project=ramen_shop_order_api
+test=rspec
+template=erb
