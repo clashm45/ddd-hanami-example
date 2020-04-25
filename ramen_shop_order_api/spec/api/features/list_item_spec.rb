@@ -3,7 +3,7 @@ RSpec.describe 'List items' do
   let(:app) { Hanami.app }
 
   let(:repository) { ItemRepository.new }
-  
+
   context "GET /api/items" do
 
     let(:do_request) do
@@ -13,7 +13,7 @@ RSpec.describe 'List items' do
 
     context "商品が0件の場合" do
 
-      let(:response_body) { { items: [] } }
+      let(:response_body) { { items: [] }.to_json }
 
       it 'is empty by default' do
         do_request
