@@ -1,3 +1,5 @@
+require "json"
+
 module Api
   module Views
     module Items
@@ -6,7 +8,14 @@ module Api
         layout false
 
         def render
-          { items: [] }.to_json
+          _raw JSON.dump(
+            items.map do |item|
+              {
+                name:  item.name,
+                price: item.price.to_i
+              }
+            end
+          )
         end
       end
     end
