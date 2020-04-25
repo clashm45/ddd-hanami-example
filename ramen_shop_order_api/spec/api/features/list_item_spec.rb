@@ -1,5 +1,3 @@
-# spec/web/features/list_books_spec.rb
-
 RSpec.describe 'List items' do
   include Rack::Test::Methods
   let(:app) { Hanami.app }
@@ -13,7 +11,7 @@ RSpec.describe 'List items' do
   end
 
   context "GET /api/items" do
-    subject do
+    before do
       header 'Content-type', 'application/json'
       get '/api/items'
 
@@ -38,8 +36,8 @@ RSpec.describe 'List items' do
 
     it 'is json response of items' do
       expect(last_response.status).to eq 200
-      expect(last_response.body).to eq response_body
       expect(last_response.content_type).to include "application/json"
+      expect(last_response.body).to eq response_body
     end
   end
 end
