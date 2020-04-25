@@ -1,6 +1,8 @@
 require 'hanami/helpers'
 require 'hanami/assets'
 
+require "hanami/middleware/body_parser"
+
 module Api
   class Application < Hanami::Application
     configure do
@@ -97,7 +99,7 @@ module Api
 
       default_response_format :json
 
-      body_parsers :json
+      middleware.use Hanami::Middleware::BodyParser, :json
 
       ##
       # TEMPLATES
