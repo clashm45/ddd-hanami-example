@@ -28,8 +28,8 @@ jobs:
     - name: Set up Sqlite database
       run: |
         cd ramen_shop_order_api
-        bundle exec hanami db create
-        bundle exec hanami db prepare
+        HANAMI_ENV=test bundle exec hanami db create
+        HANAMI_ENV=test bundle exec hanami db prepare
     - name: Build and test with Rake
       run: |
         cd ramen_shop_order_api
