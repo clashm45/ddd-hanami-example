@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # 注文伝票 Repository
 class OrderSlipRepository < Hanami::Repository
   associations do
@@ -17,7 +19,7 @@ class OrderSlipRepository < Hanami::Repository
   # @return [OrderSlipItem] 追加した注文商品
   def add_item(order_slip, item_id)
     data = {
-      item_id: item_id
+      item_id: item_id,
     }
     assoc(:order_slip_items, order_slip).add(data)
   end

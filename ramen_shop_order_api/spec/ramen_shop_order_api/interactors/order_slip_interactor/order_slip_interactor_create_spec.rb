@@ -14,7 +14,7 @@ describe OrderSlipInteractor::Create do
     end
 
     it "creates a Order Slip" do
-      expect(result.order_slip.id).to_not be nil
+      expect(result.order_slip.id).not_to be nil
     end
 
     context "persistence" do
@@ -26,6 +26,4 @@ describe OrderSlipInteractor::Create do
       end
     end
   end
-
 end
-

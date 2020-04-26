@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe OrderSlipRepository, type: :repository do
@@ -19,6 +21,7 @@ RSpec.describe OrderSlipRepository, type: :repository do
         before do
           repository.create({})
         end
+
         let(:order_slip) { repository.last }
         let(:result) { repository.find_with_order_slip_items(order_slip.id) }
 
@@ -36,6 +39,7 @@ RSpec.describe OrderSlipRepository, type: :repository do
           order_slip = repository.create({})
           repository.add_item(order_slip, item.id)
         end
+
         let(:order_slip) { repository.last }
         let(:item) { item_repository.last }
         let(:result) { repository.find_with_order_slip_items(order_slip.id) }

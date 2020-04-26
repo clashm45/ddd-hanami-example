@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'hanami/interactor'
 
 module OrderSlipInteractor
   class AddItem
-
     include Hanami::Interactor
 
     expose :order_slip_item

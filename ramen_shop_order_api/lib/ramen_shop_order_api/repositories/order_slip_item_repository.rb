@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class OrderSlipItemRepository < Hanami::Repository
   associations do
     belongs_to :order_slip

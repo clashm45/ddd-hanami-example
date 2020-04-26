@@ -29,7 +29,5 @@ RSpec.describe 'Create Order Slip' do
       expect(last_response.content_type).to include "application/json"
       expect(last_response.body).to eq response_body
     end
-
   end
 end
-

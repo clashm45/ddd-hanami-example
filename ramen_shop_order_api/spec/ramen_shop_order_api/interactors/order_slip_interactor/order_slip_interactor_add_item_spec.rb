@@ -11,7 +11,7 @@ describe OrderSlipInteractor::AddItem do
     let(:attributes) do
       {
         order_slip_id: order_slip.id,
-        item_id:       item.id
+        item_id:       item.id,
       }
     end
     let(:interactor) { described_class.new(attributes) }
@@ -22,7 +22,7 @@ describe OrderSlipInteractor::AddItem do
     end
 
     it "注文伝票に注文商品が追加される" do
-      expect(result.order_slip_item.id).to_not be nil
+      expect(result.order_slip_item.id).not_to be nil
       order_slip_item = OrderSlipItemRepository.new.find_with_item(result.order_slip_item.id)
       expect(order_slip_item.item.name).to eq item.name
       expect(order_slip_item.item.price).to eq item.price
@@ -51,7 +51,4 @@ describe OrderSlipInteractor::AddItem do
       expect(errors[:item_id]).to eq(['is missing'])
     end
   end
-
 end
-
-

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Api::Views::OrderSlip::Create, type: :view do
   let(:exposures) { Hash[format: :html] }
   let(:template)  { Hanami::View::Template.new('apps/api/templates/order_slip/create.html.erb') }
