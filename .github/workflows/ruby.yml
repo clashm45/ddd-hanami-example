@@ -30,7 +30,7 @@ jobs:
     - name: Bundle install
       run: |
         gem install bundler
-        bundle install -path vendor/bundle --jobs 4 --retry 3
+        bundle install --path vendor/bundle --jobs 4 --retry 3
       working-directory: ./ramen_shop_order_api
     - name: Set up Sqlite database
       run: |
