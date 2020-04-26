@@ -7,8 +7,12 @@ module Api
 
         expose :items
 
+        def initialize(interactor: ItemsInteractor::List.new)
+          @interactor = interactor
+        end
+
         def call(params)
-          @items = ItemRepository.new.all
+          @items = @interactor.call.items
         end
       end
     end
