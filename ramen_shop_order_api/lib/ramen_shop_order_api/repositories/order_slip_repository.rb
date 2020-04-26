@@ -14,6 +14,7 @@ class OrderSlipRepository < Hanami::Repository
   # 注文伝票に注文したい商品を追加する。
   # @param [OrderSlip] order_slip
   # @param [Integer] item_id 商品ID
+  # @return [OrderSlipItem] 追加した注文商品
   def add_item(order_slip, item_id)
     data = {
       item_id: item_id
