@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rspec'
 
 describe ItemsInteractor::List do
-  let(:interactor) { ItemsInteractor::List.new }
+  let(:interactor) { described_class.new }
   let(:result) { interactor.call }
   let(:repository) { ItemRepository.new }
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/web/views/books/index_spec.rb
 
 RSpec.describe Web::Views::Books::Index do
@@ -28,7 +30,7 @@ RSpec.describe Web::Views::Books::Index do
     end
 
     it 'hides the placeholder message' do
-      expect(rendered).to_not include('<p class="placeholder">There are no books yet.</p>')
+      expect(rendered).not_to include('<p class="placeholder">There are no books yet.</p>')
     end
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/web/controllers/books/index_spec.rb
 
 RSpec.describe Web::Controllers::Books::Index do

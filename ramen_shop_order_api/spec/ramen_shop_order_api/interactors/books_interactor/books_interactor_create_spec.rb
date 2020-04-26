@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'rspec'
 
 describe BooksInteractor::Create do
-
-  let(:interactor) { BooksInteractor::Create.new }
+  let(:interactor) { described_class.new }
   let(:attributes) { Hash[author: "James Baldwin", title: "The Fire Next Time"] }
 
   context "good input" do
@@ -22,7 +23,7 @@ describe BooksInteractor::Create do
 
       it "persists the Book" do
         expect(repository).to receive(:create)
-        BooksInteractor::Create.new(repository: repository).call(attributes)
+        described_class.new(repository: repository).call(attributes)
       end
     end
   end

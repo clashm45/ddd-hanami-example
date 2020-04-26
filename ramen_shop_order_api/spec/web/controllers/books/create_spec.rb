@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/web/controllers/books/create_spec.rb
 
 RSpec.describe Web::Controllers::Books::Create do
@@ -31,7 +33,7 @@ RSpec.describe Web::Controllers::Books::Create do
         action.call(params)
         book = repository.last
 
-        expect(book.id).to_not be_nil
+        expect(book.id).not_to be_nil
         expect(book.title).to eq(params.dig(:book, :title))
       end
     end
@@ -41,7 +43,7 @@ RSpec.describe Web::Controllers::Books::Create do
     let(:params) { Hash[book: {}] }
 
     it 'does not call interactor' do
-      expect(interactor).to_not receive(:call)
+      expect(interactor).not_to receive(:call)
       action.call(params)
     end
 

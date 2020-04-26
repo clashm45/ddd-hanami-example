@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/web/features/visit_home_spec.rb
 require 'features_helper'
 

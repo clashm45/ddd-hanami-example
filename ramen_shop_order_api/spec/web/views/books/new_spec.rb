@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/web/views/books/new_spec.rb
 
 RSpec.describe Web::Views::Books::New do

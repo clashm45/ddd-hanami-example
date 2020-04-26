@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 # spec/web/features/list_books_spec.rb
 require 'features_helper'
 
 RSpec.describe 'List books' do
-
   let(:repository) { BookRepository.new }
+
   before do
     repository.clear
 

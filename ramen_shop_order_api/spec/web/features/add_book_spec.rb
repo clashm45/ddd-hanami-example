@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/web/features/add_book_spec.rb
 require 'features_helper'
 
@@ -27,7 +29,7 @@ RSpec.describe 'Add a book' do
       click_button 'Create'
     end
 
-    expect(current_path).to eq('/books')
+    expect(page).to have_current_path('/books')
 
     expect(page).to have_content('There was a problem with your submission')
     expect(page).to have_content('Title must be filled')
