@@ -31,8 +31,8 @@ describe BooksInteractor::List do
     it "list a Book with correct title and author" do
       expect(result.books.length).to eq 1
       book = result.books[0]
-      expect(book.title).to eq("The Fire Next Time")
-      expect(book.author).to eq("James Baldwin")
+      expect(book.title).to eq(@book.title)
+      expect(book.author).to eq(@book.author)
     end
   end
 end
