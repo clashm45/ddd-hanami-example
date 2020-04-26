@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# spec/web/features/add_book_spec.rb
 require 'features_helper'
 
 RSpec.describe 'Add a book' do

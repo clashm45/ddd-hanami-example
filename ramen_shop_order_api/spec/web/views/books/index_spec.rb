@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# spec/web/views/books/index_spec.rb
+require 'spec_helper'
 
 RSpec.describe Web::Views::Books::Index do
   let(:exposures) { Hash[books: []] }

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# spec/web/controllers/books/create_spec.rb
+require 'spec_helper'
 
 RSpec.describe Web::Controllers::Books::Create do
   let(:action) { described_class.new(interactor: interactor) }

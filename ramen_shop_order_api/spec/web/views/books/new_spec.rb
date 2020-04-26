@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# spec/web/views/books/new_spec.rb
+require 'spec_helper'
 
 RSpec.describe Web::Views::Books::New do
   let(:params)    { OpenStruct.new(valid?: false, error_messages: ['Title must be filled', 'Author must be filled']) }

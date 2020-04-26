@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rspec'
+require 'spec_helper'
 
 describe BooksInteractor::List do
   let(:interactor) { described_class.new }
@@ -23,8 +23,10 @@ describe BooksInteractor::List do
 
   context "本が存在する場合" do
     before do
-      @book = repository.create(title: 'The Fire Next Time', author: 'James Baldwin')
+      repository.create(title: 'The Fire Next Time', author: 'James Baldwin')
     end
+
+    let(:book) { repository.last }
 
     it "succeeds" do
       expect(result.successful?).to be(true)
@@ -32,9 +34,9 @@ describe BooksInteractor::List do
 
     it "list a Book with correct title and author" do
       expect(result.books.length).to eq 1
-      book = result.books[0]
-      expect(book.title).to eq(@book.title)
-      expect(book.author).to eq(@book.author)
+      expect_book = result.books[0]
+      expect(expect_book.title).to eq(book.title)
+      expect(expect_book.author).to eq(book.author)
     end
   end
 end

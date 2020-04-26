@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# spec/web/controllers/books/index_spec.rb
+require 'spec_helper'
 
 RSpec.describe Web::Controllers::Books::Index do
   let(:action) { described_class.new }
