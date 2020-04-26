@@ -13,9 +13,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup System
+    - name: Setup System - install sqlite3
       run: |
-        sudo apt-get install libsqlite3-dev
+        sudo apt-get install -y sqlite3 libsqlite3-dev
     - name: Set up Ruby 2.6
       uses: actions/setup-ruby@v1
       with:
