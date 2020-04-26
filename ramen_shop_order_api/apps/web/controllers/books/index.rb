@@ -6,8 +6,12 @@ module Web
 
         expose :books
 
+        def initialize(interactor: BooksInteractor::List.new)
+          @interactor = interactor
+        end
+
         def call(params)
-          @books = BookRepository.new.all
+          @books = @interactor.call.books
         end
       end
     end
