@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'features_helper'
+
 RSpec.describe 'List items' do
   include Rack::Test::Methods
   let(:app) { Hanami.app }
