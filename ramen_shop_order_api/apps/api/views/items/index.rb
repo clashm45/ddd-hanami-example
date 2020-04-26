@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "json"
 
 module Api
@@ -12,7 +14,7 @@ module Api
             items.map do |item|
               {
                 name:  item.name,
-                price: item.price.to_i
+                price: item.price.to_i,
               }
             end
           )

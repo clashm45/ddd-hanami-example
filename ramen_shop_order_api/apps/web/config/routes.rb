@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Configure your routes here
 # See: https://guides.hanamirb.org/routing/overview
 #
@@ -6,4 +8,3 @@
 
 root to: 'home#index'
 resources :books, only: [:index, :new, :create]
-

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # apps/web/views/home/index.rb
 module Web
   module Views

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 # apps/web/controllers/home/index.rb
 module Web
