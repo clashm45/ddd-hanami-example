@@ -20,17 +20,23 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x
+    - name: Cache bundle directory
+      uses: actions/cache@v1
+      with:
+        path: ramen_shop_order_api/vendor/bundle
+        key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gem-
     - name: Bundle install
       run: |
-        cd ramen_shop_order_api
         gem install bundler
-        bundle install --jobs 4 --retry 3
+        bundle install -path vendor/bundle --jobs 4 --retry 3
+      working-directory: ./ramen_shop_order_api
     - name: Set up Sqlite database
       run: |
-        cd ramen_shop_order_api
         HANAMI_ENV=test bundle exec hanami db create
         HANAMI_ENV=test bundle exec hanami db prepare
+      working-directory: ./ramen_shop_order_api
     - name: Build and test with Rake
-      run: |
-        cd ramen_shop_order_api
-        bundle exec rake
+      run: bundle exec rake
+      working-directory: ./ramen_shop_order_api
