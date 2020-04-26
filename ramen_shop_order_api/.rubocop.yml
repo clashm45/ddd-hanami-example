@@ -3,9 +3,13 @@
 # ルールを変更したい場合は、このファイルに変更を加えてPullRequestをあげてください
 
 require:
-#  - rubocop-rails
+  #  - rubocop-rails
   - rubocop-performance
   - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.6
+  DisabledByDefault: true
 
 ############ i3-systemsで追加/変更したルール ############
 # 日本語でのコメントを許可する
