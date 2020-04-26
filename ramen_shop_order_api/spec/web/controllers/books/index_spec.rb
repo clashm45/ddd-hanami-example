@@ -9,9 +9,10 @@ RSpec.describe Web::Controllers::Books::Index do
 
   before do
     repository.clear
-
-    @book = repository.create(title: 'TDD', author: 'Kent Beck')
+    repository.create(title: 'TDD', author: 'Kent Beck')
   end
+
+  let(:book) { repository.last }
 
   it 'is successful' do
     response = action.call(params)
@@ -20,6 +21,6 @@ RSpec.describe Web::Controllers::Books::Index do
 
   it 'exposes all books' do
     action.call(params)
-    expect(action.exposures[:books]).to eq([@book])
+    expect(action.exposures[:books]).to eq([book])
   end
 end
