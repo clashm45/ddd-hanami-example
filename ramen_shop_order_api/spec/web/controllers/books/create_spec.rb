@@ -24,7 +24,7 @@ RSpec.describe Web::Controllers::Books::Create do
       expect(response[1]['Location']).to eq('/books')
     end
 
-    context "実際にデータを登録する" do
+    context "persistence" do
       let(:interactor) { BooksInteractor::Create.new }
 
       it 'creates a new book' do
