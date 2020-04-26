@@ -39,6 +39,19 @@ describe OrderSlipInteractor::AddItem do
     end
   end
 
+  context "bad input" do
+    let(:attributes) { {} }
+    let(:interactor) { described_class.new(attributes) }
+    let(:result) { interactor.call }
+    let(:errors) { result.error }
+
+    it "failed" do
+      expect(result.successful?).to be false
+      expect(errors[:order_slip_id]).to eq(['is missing'])
+      expect(errors[:item_id]).to eq(['is missing'])
+    end
+  end
+
 end
 
 
