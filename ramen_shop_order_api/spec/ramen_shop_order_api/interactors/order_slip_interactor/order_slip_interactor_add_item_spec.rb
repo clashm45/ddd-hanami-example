@@ -14,8 +14,8 @@ describe OrderSlipInteractor::AddItem do
         item_id:       item.id,
       }
     end
-    let(:interactor) { described_class.new(attributes) }
-    let(:result) { interactor.call }
+    let(:interactor) { described_class.new }
+    let(:result) { interactor.call(attributes) }
 
     it "succeeds" do
       expect(result.successful?).to be(true)
@@ -34,15 +34,15 @@ describe OrderSlipInteractor::AddItem do
       it "OrderSlipRepository#add_itemが呼ばれる" do
         expect(repository).to receive(:find)
         expect(repository).to receive(:add_item)
-        described_class.new(attributes, repository: repository).call
+        described_class.new(repository: repository).call(attributes)
       end
     end
   end
 
   context "bad input" do
     let(:attributes) { {} }
-    let(:interactor) { described_class.new(attributes) }
-    let(:result) { interactor.call }
+    let(:interactor) { described_class.new }
+    let(:result) { interactor.call(attributes) }
     let(:errors) { result.error }
 
     it "failed" do

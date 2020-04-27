@@ -8,16 +8,15 @@ module OrderSlipInteractor
 
     expose :order_slip_item
 
-    def initialize(params, repository: OrderSlipRepository.new)
-      @params = params
+    def initialize(repository: OrderSlipRepository.new)
       @repository = repository
     end
 
     # 注文伝票に商品を追加する
     # @return [OrderSlipItem] 追加した注文商品
-    def call
-      order_slip = @repository.find(@params[:order_slip_id])
-      @order_slip_item = @repository.add_item(order_slip, @params[:item_id])
+    def call(params)
+      order_slip = @repository.find(params[:order_slip_id])
+      @order_slip_item = @repository.add_item(order_slip, params[:item_id])
     end
 
     class Validation
@@ -30,8 +29,8 @@ module OrderSlipInteractor
 
     private
 
-    def valid?
-      @validate_result = Validation.new(@params).validate
+    def valid?(params)
+      @validate_result = Validation.new(params).validate
       if @validate_result.failure?
         error(@validate_result.messages)
       end
