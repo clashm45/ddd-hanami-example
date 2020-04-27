@@ -17,7 +17,12 @@ module Api
         # 注文伝票を作成する。
         # @return [OrderSlip] 作成した注文伝票
         def call(params)
-          @order_slip = @interactor.call.order_slip
+          result = @interactor.call(params)
+          if result.successful?
+            @order_slip = result.order_slip
+          else
+            status 422, result.errors
+          end
         end
       end
     end

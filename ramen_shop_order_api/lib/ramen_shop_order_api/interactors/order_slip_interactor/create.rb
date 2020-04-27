@@ -12,7 +12,7 @@ module OrderSlipInteractor
       @repository = repository
     end
 
-    def call
+    def call(params = nil)
       @order_slip = @repository.create({})
     end
   end

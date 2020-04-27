@@ -19,8 +19,7 @@ module Api
           if result.successful?
             @order_slip_item = result.order_slip_item
           else
-            self.status = 422
-            nil
+            status 422, result.error.to_json
           end
         end
       end
