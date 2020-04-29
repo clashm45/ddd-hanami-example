@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 # Controllerのテストでは、正常な入力／異常な入力で

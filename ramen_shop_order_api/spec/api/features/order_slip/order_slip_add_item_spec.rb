@@ -58,10 +58,10 @@ RSpec.describe 'Add a Item to Order Slip' do
         do_request
         expect(last_response.status).to eq 422
         expect(last_response.content_type).to include "application/json"
-        last_response.errors
         response_body = json_parse(last_response.body)
+        expect(response_body[:order_slip_id]).to include "is missing"
+        expect(response_body[:item_id]).to include "is missing"
       end
     end
   end
 end
-
