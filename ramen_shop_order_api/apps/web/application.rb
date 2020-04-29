@@ -258,7 +258,7 @@ module Web
       # See: http://www.rubydoc.info/gems/hanami-view#Configuration
       view.prepare do
         include Hanami::Helpers
-        include Web::Assets::Helpers
+        include Hanami::Assets::Helpers
       end
     end
 
