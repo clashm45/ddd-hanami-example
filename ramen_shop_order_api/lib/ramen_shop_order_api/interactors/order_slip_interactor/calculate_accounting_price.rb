@@ -10,7 +10,8 @@ module OrderSlipInteractor
     def initialize(repository: OrderSlipRepository.new)
       @repository = repository
 
-      Money.rounding_mode = BigDecimal::ROUND_HALF_UP
+      Money.rounding_mode = BigDecimal::ROUND_HALF_UP # 四捨五入
+      Money.locale_backend = :currency # localization 通貨のデフォルトフォーマットに依存
     end
 
     # 注文伝票をもとに合計金額を計算する。
