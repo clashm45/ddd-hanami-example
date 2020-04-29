@@ -4,8 +4,6 @@ module Api
       class AddItem
         include Api::Action
 
-        accept :json
-
         expose :order_slip_item
 
         def initialize(interactor: OrderSlipInteractor::AddItem.new)

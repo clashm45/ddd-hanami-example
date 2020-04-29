@@ -1,13 +1,10 @@
 # frozen_string_literal: true
 
-require "json"
-
 module Api
   module Views
     module Items
       class Index
         include Api::View
-        layout false
 
         def render
           _raw JSON.dump(

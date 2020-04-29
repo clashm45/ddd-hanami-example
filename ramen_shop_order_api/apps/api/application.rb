@@ -262,7 +262,7 @@ module Api
       # See: http://www.rubydoc.info/gems/hanami-view#Configuration
       view.prepare do
         include Hanami::Helpers
-        include Api::Assets::Helpers
+        include Hanami::Assets::Helpers
       end
     end
 

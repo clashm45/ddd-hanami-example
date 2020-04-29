@@ -6,8 +6,6 @@ module Api
       class Create
         include Api::Action
 
-        accept :json
-
         expose :order_slip
 
         def initialize(interactor: OrderSlipInteractor::Create.new)
