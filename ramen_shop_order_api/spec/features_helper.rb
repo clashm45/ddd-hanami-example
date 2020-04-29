@@ -8,6 +8,7 @@ require 'capybara/rspec'
 
 require 'json'
 require 'hanami/utils/hash'
+require 'money'
 
 RSpec.configure do |config|
   config.include RSpec::FeatureExampleGroup
