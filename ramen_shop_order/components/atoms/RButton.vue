@@ -7,12 +7,12 @@
   import { Vue, Component, Prop } from 'vue-property-decorator'
 
   /**
-   * 基本的なボタン
+   * 基本的なボタン <button>
    */
   @Component({})
   export default class RButton extends Vue {
 
-    @Prop({ default: 'default value', required: true })
+    @Prop({ type: String, default: 'default value', required: true })
     readonly text!: string
 
     // button onClick イベントを親に伝える。

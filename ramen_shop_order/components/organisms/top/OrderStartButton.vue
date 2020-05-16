@@ -16,7 +16,7 @@
   })
   export default class OrderStartButton extends Vue {
 
-    @Prop({ default: 'default order start button', required: true })
+    @Prop({ type: String, default: 'default order start button', required: true })
     readonly text!: string
 
     // ボタンクリックを親に伝える。

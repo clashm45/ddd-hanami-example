@@ -25,9 +25,9 @@
     }
   })
   export default class TopTemplate extends Vue {
-    startButtonText = '注文する'
+    startButtonText: string = '注文する'
 
-    hello() {
+    hello(): void {
       console.log('Hello World!')
     }
   }

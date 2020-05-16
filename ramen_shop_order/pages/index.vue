@@ -7,7 +7,7 @@
   import TopTemplate from '~/components/templates/TopTemplate.vue'
 
   /**
-   * 基本的なボタン
+   * TOPページ
    */
   @Component({
     components: {
