@@ -29,5 +29,7 @@ TypeScriptの型チェックが効くようになる。
 参考：
 * [Vue.jsガイド - クラススタイル Vue コンポーネント](https://jp.vuejs.org/v2/guide/typescript.html)
 * [Vue Class Component - Overview](https://class-component.vuejs.org/)
+* [Nuxt TypeScript - Component](https://typescript.nuxtjs.org/ja/cookbook/components/#script)
 * [Vue Property Decorator](https://github.com/kaorun343/vue-property-decorator)
 * [TypeScriptではじめるVueコンポーネント（vue-class-component）](https://qiita.com/hatakoya/items/8d9968d07748d20825f8)
+* [TypeScriptでVue.jsを書く – Vue CLIを使った開発のポイントを紹介](https://mae.chab.in/archives/60167)
