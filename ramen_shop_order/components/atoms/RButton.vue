@@ -6,6 +6,9 @@
 
   import { Vue, Component, Prop } from 'vue-property-decorator'
 
+  /**
+   * 基本的なボタン
+   */
   @Component({})
   export default class RButton extends Vue {
 
