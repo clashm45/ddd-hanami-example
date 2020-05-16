@@ -23,13 +23,17 @@
         "./*"
       ]
     },
+    "typeRoots": [
+      "./ramen_shop_order.d.ts"
+    ],
     "types": [
       "@types/node",
       "@nuxt/types"
     ]
   },
   "files": [
-    "shims-vue.d.ts"
+    "shims-vue.d.ts",
+    "ramen_shop_order.d.ts"
   ],
   "include": [
     "components/**/*.ts",
