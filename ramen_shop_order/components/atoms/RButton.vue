@@ -1,5 +1,5 @@
 <template>
-  <button>{{text}}</button>
+  <button v-on:click="click">{{text}}</button>
 </template>
 
 <script lang="ts">
@@ -14,6 +14,12 @@
 
     @Prop({ default: 'default value', required: true })
     readonly text!: string
+
+    // button onClick イベントを親に伝える。
+    click() {
+      console.debug('RButton#onClick')
+      this.$emit("click")
+    }
 
   }
 

@@ -2,7 +2,10 @@
   <div class="container">
     <div class="grid grid-cols-6 w-full">
       <div class="col-start-2 col-span-4">
-        <order-start-button text="注文する"></order-start-button>
+        <order-start-button
+          :text="startButtonText"
+          v-on:click="hello">
+        </order-start-button>
       </div>
     </div>
   </div>
@@ -21,7 +24,13 @@
       OrderStartButton
     }
   })
-  export default class TopTemplate extends Vue {}
+  export default class TopTemplate extends Vue {
+    startButtonText = '注文する'
+
+    hello() {
+      console.log('Hello World!')
+    }
+  }
 
 </script>
 
