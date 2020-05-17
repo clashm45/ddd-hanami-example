@@ -36,6 +36,6 @@
 
 <style scoped>
   .price {
-    @apply text-black text-xl text-red-600;
+    @apply text-red-600;
   }
 </style>

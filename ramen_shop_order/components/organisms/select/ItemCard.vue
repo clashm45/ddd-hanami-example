@@ -4,7 +4,7 @@
       <r-image :src="imageSrc" :alt="imageAlt" style="max-width: 300px; max-height: 290px;"/>
     </div>
     <div class="px-6 py-4">
-      <item-name :name="name"/>
+      <item-name :name="name" class="name"/>
       <item-price :price="price" class="price"/>
     </div>
   </div>
@@ -62,7 +62,11 @@
     @apply w-full bg-gray-100 rounded-t-lg flex justify-center;
   }
 
+  .card .name {
+    @apply text-2xl;
+  }
+
   .card .price {
-    @apply text-right;
+    @apply text-right text-xl;
   }
 </style>
