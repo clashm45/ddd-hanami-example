@@ -12,15 +12,20 @@
               :price="item.price"
               :image-src="item.image.src"
               :image-alt="item.image.alt"
-              :image-bg="card_background_color()"
-              v-on:click="click(item.id)"
+              image-bg="#fb9224"
+              v-on:click="click(item)"
               class="card"
             />
           </div>
         </div>
       </div>
       <div class="col-span-3 right-pain">
-        <p>右ペイン</p>
+        <div v-for="selectedItem in selectedItems" :key="selectedItem.id">
+          <selected-item-row
+            :name="selectedItem.item.name"
+            :price="selectedItem.item.price">
+          </selected-item-row>
+        </div>
       </div>
     </div>
   </div>
@@ -30,41 +35,36 @@
   import { PropType } from 'vue'
   import { Vue, Component, Prop } from 'vue-property-decorator'
   import ItemCard from '~/components/organisms/select/ItemCard.vue'
+  import SelectedItemRow from '~/components/organisms/select/SelectedItemRow.vue'
   import Items = RSO.Items
-  import ID = RSO.ID
+  import SelectedItems = RSO.SelectedItems
+  import Item = RSO.Item
 
   /**
    * 商品選択ページテンプレート
    */
   @Component({
-    components: { ItemCard }
+    components: { SelectedItemRow, ItemCard }
   })
   export default class SelectTemplate extends Vue {
 
+    // 商品リスト
     @Prop({ type: Array as PropType<Items>, required: true })
     readonly items!: Items
 
+    // 選択した商品リスト
+    selectedItems: SelectedItems = []
+
     // 商品を選択
-    click(id: ID) {
-      console.debug(`SelectTemplate#onClick - ${id}`)
+    click(item: Item) {
+      console.debug(`SelectTemplate#onClick - ${item.id}`)
+      console.info('商品を追加', item.name)
+      console.debug(this.selectedItems)
+      this.selectedItems.push({
+        id: Math.random(),
+        item: item
+      })
     }
-
-    // カードのスタイルを判断するためのカウンター(local state)
-    cardCount = 0
-    // カードの背景色を決める
-    card_background_color() {
-      this.cardCount++
-      switch (this.cardCount) {
-        case 1:
-          return '#2a1a5e' // "img-bg-blue";
-        case 2:
-          return '#f45905' // "img-bg-orange-dark";
-        case 3:
-          this.cardCount = 0 // reset
-          return '#fb9224' // "img-bg-orange-light";
-      }
-    }
-
   }
 </script>
 

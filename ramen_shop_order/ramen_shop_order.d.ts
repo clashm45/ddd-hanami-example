@@ -22,4 +22,12 @@ declare namespace RSO {
     src: string
     alt: string
   }
+
+  // 選択した商品
+  class SelectedItem {
+    id: ID
+    item: Item
+  }
+
+  type SelectedItems = SelectedItem[]
 }
