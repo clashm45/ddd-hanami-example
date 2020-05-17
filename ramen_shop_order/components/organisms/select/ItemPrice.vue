@@ -1,5 +1,5 @@
 <template>
-  <r-text :text="price | numberToString" class="price"></r-text>
+  <r-text :text="price | priceFormat" class="price"></r-text>
 </template>
 
 <script lang="ts">
@@ -14,8 +14,15 @@
   @Component({
     components: { RText },
     filters: {
-      numberToString(value: number) {
-        return value.toString()
+      // 値段フォーマット フィルター
+      priceFormat(value: number) {
+        // https://blog.leko.jp/post/what-benefit-of-intl-number-format/
+        const commaFormatter = new Intl.NumberFormat('en', {
+          style: 'currency',
+          currency: 'JPY',
+          currencyDisplay: 'symbol'
+        })
+        return commaFormatter.format(value)
       }
     }
   })
@@ -29,6 +36,6 @@
 
 <style scoped>
   .price {
-    @apply text-red-500;
+    @apply text-black text-xl text-red-600;
   }
 </style>
