@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" v-on:click="click">
     <div class="image" v-bind:style="{ 'background-color': imageBg }">
       <r-image :src="imageSrc" :alt="imageAlt" style="max-width: 300px; max-height: 290px;"/>
     </div>
@@ -44,9 +44,9 @@
     @Prop({ type: Number as PropType<Money>, required: true })
     readonly price!: Money
 
-    // button onClick イベントを親に伝える。
+    // onClick イベントを親に伝える。
     click() {
-      console.debug('RButton#onClick')
+      console.debug('ItemCard#onClick')
       this.$emit('click')
     }
 

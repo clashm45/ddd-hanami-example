@@ -49,8 +49,9 @@
       console.debug(`SelectTemplate#onClick - ${id}`)
     }
 
+    // カードのスタイルを判断するためのカウンター(local state)
     cardCount = 0
-
+    // カードの背景色を決める
     card_background_color() {
       this.cardCount++
       switch (this.cardCount) {
