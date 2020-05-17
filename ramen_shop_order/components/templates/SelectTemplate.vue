@@ -20,12 +20,10 @@
         </div>
       </div>
       <div class="col-span-3 right-pain">
-        <div v-for="selectedItem in selectedItems" :key="selectedItem.id">
-          <selected-item-row
-            :name="selectedItem.item.name"
-            :price="selectedItem.item.price">
-          </selected-item-row>
-        </div>
+        <selected-item-list
+          :selected-items="selectedItems"
+          class="selected-list">
+        </selected-item-list>
       </div>
     </div>
   </div>
@@ -35,16 +33,17 @@
   import { PropType } from 'vue'
   import { Vue, Component, Prop } from 'vue-property-decorator'
   import ItemCard from '~/components/organisms/select/ItemCard.vue'
+  import SelectedItemList from '~/components/organisms/select/SelectedItemList.vue'
   import SelectedItemRow from '~/components/organisms/select/SelectedItemRow.vue'
+  import Item = RSO.Item
   import Items = RSO.Items
   import SelectedItems = RSO.SelectedItems
-  import Item = RSO.Item
 
   /**
    * 商品選択ページテンプレート
    */
   @Component({
-    components: { SelectedItemRow, ItemCard }
+    components: { SelectedItemList, SelectedItemRow, ItemCard }
   })
   export default class SelectTemplate extends Vue {
 
@@ -88,5 +87,9 @@
 
   .card {
     @apply bg-yellow-300;
+  }
+
+  .selected-list {
+    @apply m-3 max-h-full overflow-auto;
   }
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <div class="selectedItem">
-    <item-name :name="name" class="name"/>
-    <item-price :price="price" class="price"/>
+  <div class="selectedItem grid grid-cols-5">
+    <item-name :name="name" class="name col-span-3"/>
+    <item-price :price="price" class="price col-span-2"/>
   </div>
 </template>
 
@@ -31,13 +31,13 @@
 
 <style scoped>
   .selectedItem {
-    @apply w-full rounded-t-lg;
+    @apply w-full py-2 border;
   }
 
   .name {
-
+    @apply text-left text-base mx-5;
   }
   .price {
-    @apply text-right;
+    @apply text-right mx-5;
   }
 </style>
