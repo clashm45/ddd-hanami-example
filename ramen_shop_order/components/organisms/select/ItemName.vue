@@ -24,6 +24,6 @@
 
 <style scoped>
   .titleText {
-    @apply font-bold text-xl mb-2
+    @apply font-bold text-2xl mb-2 font-sans
   }
 </style>
