@@ -18,10 +18,10 @@
     @Prop({ type: String, default: 'alt string', required: true })
     readonly alt!: string
 
-    @Prop({ type: Number, default: 300 })
+    @Prop({ type: Number })
     width?: number
 
-    @Prop({ type: Number, default: 200 })
+    @Prop({ type: Number })
     height?: number
   }
 </script>
