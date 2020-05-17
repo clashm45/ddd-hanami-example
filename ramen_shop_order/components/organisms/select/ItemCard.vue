@@ -1,9 +1,11 @@
 <template>
-  <div class="max-w-sm rounded overflow-hidden shadow-lg">
-    <r-image :src="imageSrc" :alt="imageAlt" class="w-full"/>
+  <div class="card">
+    <div class="image" v-bind:style="{ 'background-color': imageBg }">
+      <r-image :src="imageSrc" :alt="imageAlt" style="max-width: 300px; max-height: 290px;"/>
+    </div>
     <div class="px-6 py-4">
       <ItemName :name="name"/>
-      <item-price :price="price"/>
+      <item-price :price="price" class="price"/>
     </div>
   </div>
 </template>
@@ -30,9 +32,15 @@
     @Prop({ type: String, required: true })
     readonly imageAlt!: string
 
+    // 画像のbackgroundを指定する。(Optional)
+    @Prop({ type: String })
+    readonly imageBg?: string
+
+    // 商品名
     @Prop({ type: String, required: true })
     readonly name!: string
 
+    // 商品の値段
     @Prop({ type: Number as PropType<Money>, required: true })
     readonly price!: Money
 
@@ -46,5 +54,15 @@
 </script>
 
 <style scoped>
+  .card {
+    @apply w-full rounded-lg shadow-lg;
+  }
 
+  .card .image {
+    @apply w-full bg-gray-100 rounded-t-lg flex justify-center;
+  }
+
+  .card .price {
+    @apply text-right;
+  }
 </style>
