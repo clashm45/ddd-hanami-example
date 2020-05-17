@@ -4,7 +4,7 @@
       <r-image :src="imageSrc" :alt="imageAlt" style="max-width: 300px; max-height: 290px;"/>
     </div>
     <div class="px-6 py-4">
-      <ItemName :name="name"/>
+      <item-name :name="name"/>
       <item-price :price="price" class="price"/>
     </div>
   </div>
