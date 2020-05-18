@@ -104,11 +104,11 @@
   }
 
   .left-pain {
-    @apply bg-blue-300;
+    @apply bg-gray-100;
   }
 
   .right-pain {
-    @apply bg-gray-300 h-full p-3;
+    @apply bg-gray-100 h-full p-3;
   }
 
   .card {
