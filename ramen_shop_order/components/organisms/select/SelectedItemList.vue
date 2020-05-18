@@ -1,7 +1,7 @@
 <template>
   <div class="component">
     <div class="header">
-      <p>選択商品</p>
+      <r-text text="選択商品" class="header-text"></r-text>
     </div>
     <div class="list">
       <selected-item-row
@@ -19,12 +19,13 @@
   import { Vue, Component, Prop } from 'vue-property-decorator'
   import SelectedItems = RSO.SelectedItems
   import SelectedItemRow from '~/components/organisms/select/SelectedItemRow.vue'
+  import RText from '~/components/atoms/RText.vue'
 
   /**
    * 商品選択画面 右ペイン 選択した商品リスト コンポーネント
    */
   @Component({
-    components: { SelectedItemRow }
+    components: { RText, SelectedItemRow }
   })
   export default class SelectedItemList extends Vue {
 
@@ -47,7 +48,11 @@
 
   .header {
     height: 50px;
-    @apply bg-blue-600 rounded-t-lg font-bold text-white text-lg;
+    @apply bg-blue-600 rounded-t-lg py-3;
+  }
+
+  .header-text {
+    @apply font-bold text-white text-lg;
   }
 
   .list {
