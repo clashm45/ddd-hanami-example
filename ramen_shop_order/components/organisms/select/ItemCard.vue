@@ -55,7 +55,7 @@
 
 <style scoped>
   .card {
-    @apply w-full rounded-lg shadow-lg;
+    @apply w-full rounded-lg shadow-lg cursor-pointer;
   }
 
   .card .image {
