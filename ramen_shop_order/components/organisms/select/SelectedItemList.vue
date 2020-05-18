@@ -43,12 +43,13 @@
 
 <style scoped>
   .component {
-    @apply rounded-t-lg bg-blue-400 h-full;
+    @apply rounded-t-lg bg-gray-400 h-full;
   }
 
   .header {
     height: 50px;
-    @apply bg-blue-600 rounded-t-lg py-3;
+    background-color: #2a1a5e;
+    @apply rounded-t-lg py-3;
   }
 
   .header-text {
