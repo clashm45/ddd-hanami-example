@@ -114,7 +114,7 @@
   }
 
   .selected-list {
-    height: 388px;
+    height: 388px; /*固定の高さを指定しないと子要素のmax-heightがちゃんと動かない。*/
     @apply border border-red-700;
   }
 
