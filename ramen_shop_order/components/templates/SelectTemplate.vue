@@ -30,7 +30,7 @@
         </div>
         <div class="grid grid-rows-6 grid-flow-col gap-3">
           <div class="total-amount row-span-3">
-            <p>合計金額</p>
+            <accounting-price-board :selected-items="selectedItems"></accounting-price-board>
           </div>
           <div class="row-span-2">
             <r-button text="注文する" class="button-submit" v-on:click="submit"></r-button>
@@ -54,12 +54,13 @@
   import Items = RSO.Items
   import SelectedItems = RSO.SelectedItems
   import RButton from '~/components/atoms/RButton.vue'
+  import AccountingPriceBoard from '~/components/organisms/select/AccountingPriceBoard.vue'
 
   /**
    * 商品選択ページテンプレート
    */
   @Component({
-    components: { RButton, SelectedItemList, SelectedItemRow, ItemCard }
+    components: { AccountingPriceBoard, RButton, SelectedItemList, SelectedItemRow, ItemCard }
   })
   export default class SelectTemplate extends Vue {
 
