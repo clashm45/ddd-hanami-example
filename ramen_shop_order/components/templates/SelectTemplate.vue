@@ -19,11 +19,26 @@
           </div>
         </div>
       </div>
-      <div class="col-span-3 right-pain">
-        <selected-item-list
-          :selected-items="selectedItems"
-          class="selected-list">
-        </selected-item-list>
+      <!--   右ペイン   -->
+      <div class="col-span-3 right-pain grid grid-rows-2 grid-flow-col gap-3">
+        <!--    選択した商品    -->
+        <div class="">
+          <selected-item-list
+            :selected-items="selectedItems"
+            class="selected-list">
+          </selected-item-list>
+        </div>
+        <div class="grid grid-rows-6 grid-flow-col gap-3">
+          <div class="total-amount row-span-3">
+            <p>合計金額</p>
+          </div>
+          <div class="row-span-2">
+            <r-button text="注文する" class="button-submit" v-on:click="submit"></r-button>
+          </div>
+          <div class="row-span-1">
+            <r-button text="取り消し" class="button-cancel" v-on:click="cancel"></r-button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -38,12 +53,13 @@
   import Item = RSO.Item
   import Items = RSO.Items
   import SelectedItems = RSO.SelectedItems
+  import RButton from '~/components/atoms/RButton.vue'
 
   /**
    * 商品選択ページテンプレート
    */
   @Component({
-    components: { SelectedItemList, SelectedItemRow, ItemCard }
+    components: { RButton, SelectedItemList, SelectedItemRow, ItemCard }
   })
   export default class SelectTemplate extends Vue {
 
@@ -64,6 +80,14 @@
         item: item
       })
     }
+
+    submit() {
+      console.debug('Submit!!')
+    }
+
+    cancel() {
+      console.debug('Cancel!!')
+    }
   }
 </script>
 
@@ -78,11 +102,11 @@
   }
 
   .left-pain {
-    @apply bg-blue-300
+    @apply bg-blue-300;
   }
 
   .right-pain {
-    @apply bg-gray-300
+    @apply bg-gray-300 h-full p-3;
   }
 
   .card {
@@ -90,6 +114,19 @@
   }
 
   .selected-list {
-    @apply m-3 max-h-full overflow-auto;
+    height: 388px;
+    @apply border border-red-700;
+  }
+
+  .total-amount {
+    @apply bg-red-200;
+  }
+
+  .button-submit {
+    @apply bg-orange-500 w-full h-full text-xl text-white font-bold border border-orange-600 rounded-lg;
+  }
+
+  .button-cancel {
+    @apply bg-blue-500 w-full h-full text-base text-white font-bold border border-orange-600 rounded-lg;
   }
 </style>

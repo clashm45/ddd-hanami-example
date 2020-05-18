@@ -3,8 +3,9 @@
     <div class="header">
       <p>選択商品</p>
     </div>
-    <div v-for="selectedItem in selectedItems" :key="selectedItem.id" class="list">
+    <div class="list">
       <selected-item-row
+        v-for="selectedItem in selectedItems" :key="selectedItem.id"
         :name="selectedItem.item.name"
         :price="selectedItem.item.price"
         class="row">
@@ -41,17 +42,38 @@
 
 <style scoped>
   .component {
-    @apply rounded-lg;
+    @apply rounded-t-lg bg-blue-400 h-full;
   }
 
   .header {
-    @apply bg-blue-500 rounded-t-lg;
+    height: 50px;
+    @apply bg-blue-600 rounded-t-lg font-bold text-white text-lg;
   }
 
   .list {
-    @apply bg-gray-200;
+    max-height: calc(100% - 50px);
+    @apply bg-gray-200 overflow-auto;
   }
 
   .row {
+    @apply overflow-hidden;
+  }
+
+  /*スクロールバー全体*/
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /*スクロールバーの軌道*/
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .1);
+  }
+
+  /*スクロールバーの動く部分*/
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 50, .5);
+    border-radius: 10px;
+    box-shadow:0 0 0 1px rgba(255, 255, 255, .3);
   }
 </style>
