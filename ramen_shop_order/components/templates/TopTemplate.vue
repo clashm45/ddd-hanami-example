@@ -4,7 +4,7 @@
       <div class="col-start-2 col-span-4">
         <order-start-button
           :text="startButtonText"
-          v-on:click="hello">
+          v-on:click="goOrder">
         </order-start-button>
       </div>
     </div>
@@ -27,8 +27,9 @@
   export default class TopTemplate extends Vue {
     startButtonText: string = '注文する'
 
-    hello(): void {
-      console.log('Hello World!')
+    goOrder(): void {
+      console.log('Go Order')
+      this.$router.push('select')
     }
   }
 
