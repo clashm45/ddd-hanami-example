@@ -87,6 +87,7 @@
 
     cancel() {
       console.debug('Cancel!!')
+      this.$router.push('/')
     }
   }
 </script>
