@@ -123,10 +123,10 @@
   }
 
   .button-submit {
-    @apply bg-orange-500 w-full h-full text-xl text-white font-bold border border-orange-600 rounded-lg;
+    @apply bg-orange-500 w-full h-full text-xl text-white font-bold rounded-lg;
   }
 
   .button-cancel {
-    @apply bg-blue-500 w-full h-full text-base text-white font-bold border border-orange-600 rounded-lg;
+    @apply bg-blue-500 w-full h-full text-base text-white font-bold rounded-lg;
   }
 </style>
