@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  server:
+    build:
+      context: ./ramen_shop_order_api
+    command: hanami server --host=0.0.0.0
+    ports:
+      - 2300:2300
+    volumes:
+      - ./ramen_shop_order_api:/app
+
+  front:
+    build:
+      context: ./ramen_shop_order
+    ports:
+      - 3000:3000
+    volumes:
+      - ./ramen_shop_order:/app
