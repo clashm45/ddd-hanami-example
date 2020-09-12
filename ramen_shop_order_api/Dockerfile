@@ -15,8 +15,5 @@ COPY . /app
 
 RUN bundle install -j $(nproc) --quiet
 
-RUN bundle exec hanami db create
-RUN bundle exec hanami db migrate
-
 EXPOSE 2300
 CMD ["bundle", "exec"]
